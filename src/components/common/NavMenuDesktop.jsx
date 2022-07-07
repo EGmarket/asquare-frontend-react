@@ -4,7 +4,7 @@ class NavMenuDesktop extends Component {
     render() {
         return (
             <div>
-                
+
             </div>
         );
     }
