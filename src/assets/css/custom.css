@@ -1,3 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300;1,400&family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,500&family=Roboto+Condensed:ital,wght@0,700;1,300;1,700&display=swap");
+
+@import "typo.css";
+@import "bigSlider.css";
+@import "button.css";
+@import "card.css";
+@import "footer.css";
+@import "megaMenu.css";
+@import "navMenuDesktop.css";
+@import "navMenuMobile.css";
+
 body{
     background-color: aquamarine;
 }

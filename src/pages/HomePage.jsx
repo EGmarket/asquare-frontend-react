@@ -6,7 +6,9 @@ class HomePage extends Component {
         return (
             <Fragment>
                 <Container className="mt-5">
-                    <h1> This is our home page</h1>
+                    <h5> Ameena I Love You</h5> <br/>
+                    <h2>Asad Loves you lot</h2>
+                    <h2>Happy?</h2>
                 </Container>
 
 
