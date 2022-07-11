@@ -6,9 +6,9 @@ class HomePage extends Component {
     render() {
         return (
             <Fragment>
-                <Container className="mt-5">
+
                     <FeaturedProducts/>
-                </Container>
+
 
 
             </Fragment>
