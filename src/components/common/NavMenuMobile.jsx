@@ -2,6 +2,7 @@ import React, {Component,Fragment} from 'react';
 import {Col, Container, Navbar, Row, Button} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import Logo from '../../assets/images/waterMark.png';
+import MegaMenuMobile from "../home/MegaMenuMobile";
 
 class NavMenuMobile extends Component {
 
@@ -53,7 +54,7 @@ class NavMenuMobile extends Component {
                     </Container>
 
                     <div className={this.state.SideNavState}>
-                        sdfsdf
+                        <MegaMenuMobile/>
                     </div>
 
 
