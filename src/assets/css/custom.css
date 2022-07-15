@@ -9,6 +9,7 @@
 @import "MegaMenuMobile.css";
 @import "navMenuDesktop.css";
 @import "navMenuMobile.css";
+@import "responsive.css";
 
 body{
     background-color: white;
