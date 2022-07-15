@@ -10,10 +10,7 @@
 @import "navMenuDesktop.css";
 @import "navMenuMobile.css";
 @import "responsive.css";
-
-body{
-    background-color: white;
-    margin: 0px;
+@import "common.css";
+@import "onboard.css";
 
 
-}
