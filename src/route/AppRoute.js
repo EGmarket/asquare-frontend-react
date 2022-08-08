@@ -4,6 +4,7 @@ import HomePage from "../pages/HomePage";
 import UserLoginPage from "../pages/UserLoginPage";
 import ContactPage from "../pages/ContactPage";
 import ProductDetailsPage from "../pages/ProductDetailsPage";
+import NotificationPage from "../pages/NotificationPage";
 
 class AppRoute extends Component {
     render() {
@@ -14,6 +15,7 @@ class AppRoute extends Component {
                     <Route path="/login" element={<UserLoginPage/>}/>
                     <Route path="/contact" element={<ContactPage/>}/>
                     <Route path="/productdetails" element={<ProductDetailsPage/>}/>
+                    <Route path="/notification" element={<NotificationPage/>}/>
                 </Routes>
 
             </Fragment>
