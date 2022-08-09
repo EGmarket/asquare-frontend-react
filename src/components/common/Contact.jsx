@@ -3,6 +3,8 @@ import { Container,Row,Col, Form,Button } from 'react-bootstrap'
 import validation from "../validation/validation";
 import axios from "axios";
 import AppURL from "../../api/AppURL";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class Contact extends Component {
     constructor() {
@@ -44,13 +46,14 @@ class Contact extends Component {
         let contactForm = document.getElementById('contactForm')
 
         if(name.length == 0){
-            alert('name can not be empty')
+
+            toast.error('name can not be empty')
         } else if (email.length == 0){
-            alert('email required')
+            toast.error('email can not be empty')
         }else if (message.length == 0){
-            alert('write something to us')
+            toast.info('Write Your msg')
         }else if(!(validation.NameRegx).test(name)){
-            alert('invalid name')
+            toast.error('invalid')
         }else {
             sendID.innerHTML="Sending...."
             let MyFormData = new FormData();
@@ -61,15 +64,21 @@ class Contact extends Component {
 
             axios.post(AppURL.PostContact,MyFormData).then(function (response){
                 if (response.status==200 && response.data==1){
-                    alert('Your Message recorded')
+                    toast.success("Success Notification !", {
+                        position: toast.POSITION.TOP_CENTER
+                    });
                     sendID.innerHTML="Send"
                     contactForm.reset()
                 } else {
-                    alert("error")
+                    toast.error("Error Notification !", {
+                        position: toast.POSITION.TOP_LEFT
+                    });
                     sendID.innerHTML="Send"
                 }
             }).catch(function (error){
-                alert(error)
+                toast.error(error, {
+                    position: toast.POSITION.TOP_LEFT
+                });
                 sendID.innerHTML="Send"
             });
         }
@@ -122,6 +131,7 @@ class Contact extends Component {
                         </Col>
                     </Row>
                 </Container>
+                <ToastContainer/>
             </Fragment>
         );
     }
