@@ -40,6 +40,8 @@ class Contact extends Component {
         let name = this.state.name;
         let email = this.state.email;
         let message = this.state.message;
+        let sendID = document.getElementById('sendID')
+        let contactForm = document.getElementById('contactForm')
 
         if(name.length == 0){
             alert('name can not be empty')
@@ -50,19 +52,25 @@ class Contact extends Component {
         }else if(!(validation.NameRegx).test(name)){
             alert('invalid name')
         }else {
+            sendID.innerHTML="Sending...."
             let MyFormData = new FormData();
             MyFormData.append('name',name)
             MyFormData.append('email',email)
             MyFormData.append('message',message)
 
+
             axios.post(AppURL.PostContact,MyFormData).then(function (response){
                 if (response.status==200 && response.data==1){
                     alert('Your Message recorded')
+                    sendID.innerHTML="Send"
+                    contactForm.reset()
                 } else {
                     alert("error")
+                    sendID.innerHTML="Send"
                 }
             }).catch(function (error){
                 alert(error)
+                sendID.innerHTML="Send"
             });
         }
 
@@ -79,7 +87,7 @@ class Contact extends Component {
 
                             <Row className="text-center">
                                 <Col className="d-flex justify-content-center" md={6} lg={6} sm={12} xs={12}>
-                                    <Form onSubmit={this.onFormSubmit} className="onboardForm">
+                                    <Form id="contactForm" onSubmit={this.onFormSubmit} className="onboardForm">
                                         <h4 className="section-title-login">CONTACT WITH US </h4>
                                         <h6 className="section-sub-title">Please Contact With Us </h6>
                                         <input onChange={this.nameOnChange} className="form-control m-2" type="text" placeholder="Enter your name" />
@@ -87,7 +95,7 @@ class Contact extends Component {
                                         <input onChange={this.emailOnChange} className="form-control m-2" type="email" placeholder="Enter Email" />
 
                                         <textarea onChange={this.messageOnChange} className="form-control m-2" rows="3" placeholder="Please write ur msg"></textarea>
-                                        <Button type="submit" className="btn btn-block m-2 site-btn-login"> Send </Button>
+                                        <Button id="sendID" type="submit" className="btn btn-block m-2 site-btn-login"> Send </Button>
 
                                     </Form>
 
